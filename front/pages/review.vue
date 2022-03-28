@@ -21,11 +21,12 @@
 </template>
 
 <script>
+import axios from "@/plugins/axios";
 
 export default {
   async asyncData({ $axios }) {
     const answers = await $axios.$get(
-      "http://localhost:3000/v1/answers"
+      "/v1/answers"
     );
     return { answers };
   },

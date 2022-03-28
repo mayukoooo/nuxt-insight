@@ -1,95 +1,52 @@
 <template>
-  <v-app dark>
-    <!-- <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
-    <v-app-bar fixed app>
-      <NuxtLink to="/"><v-toolbar-title v-text="title" /></NuxtLink>
+  <div>
+    <v-app-bar class="head" fixed app>
+      <NuxtLink to="/">
+        <div class="logo">
+            <img src="~/assets/img/logo.png" width="90px">
+        </div>
+      </NuxtLink>
       <v-spacer />
+
       <NuxtLink to="/review">
-      <v-col cols="12" sm="2">
-        <v-btn icon color="#FFAB91">
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
-      </v-col>
+        <v-col class="icon" cols="12" sm="2">
+            <img src="~/assets/img/myworks_icon.png" width="40px">
+        </v-col>
       </NuxtLink>
     </v-app-bar>
     
     <v-main>
-      <v-container>
+      <v-container class="container">
         <Nuxt />
       </v-container>
     </v-main>
-    <!-- <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
-
-    <!-- <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer> -->
-
-  </v-app>
+    
+    <div>
+      <Footer />
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
-  name: 'DefaultLayout',
-  data () {
-    return {
-      // clipped: false,
-      // drawer: false,
-      // fixed: false,
-      // items: [
-      //   {
-      //     icon: 'mdi-apps',
-      //     title: 'Welcome',
-      //     to: '/'
-      //   },
-      //   {
-      //     icon: 'mdi-chart-bubble',
-      //     title: 'Inspire',
-      //     to: '/inspire'
-      //   }
-      // ],
-      // miniVariant: false,
-      // right: true,
-      // rightDrawer: false,
-      title: 'Insight'
-    }
-  }
-}
 </script>
+
+<style>
+.container {
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  /* background-image: url("../assets/img/background.png"); */
+}
+.logo {
+  /* margin-right: auto;
+  margin-left: auto;
+  align-items: center; */
+  text-align: center;
+}
+.head {
+  padding: 4px;
+}
+/* .icon {
+  background-image: url("../assets/img/kiiro.png");
+  width: 80px;
+} */
+</style>
 
